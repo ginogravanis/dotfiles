@@ -1,0 +1,28 @@
+[user]
+   name = Gino Gravanis
+   email = ginogravanis@users.noreply.github.com
+[merge]
+   conflictstyle = diff3
+[alias]
+   jump = reset --hard
+   clean = reset --hard HEAD
+   vanish = reset --hard HEAD^
+   melt = reset --soft HEAD^
+   shove = push --force-with-lease
+
+   a = add
+   aa = add .
+   ap = add -p
+   c = commit
+   ca = commit --amend
+   can = commit --amend --no-edit
+   ch = checkout
+   cl = clone
+   f = fetch --all -Pp
+   j = jump
+   r = rebase
+   ri = rebase -i
+   s = status -sb
+   st = stash
+   sd = stash drop
+   sp = stash pop
