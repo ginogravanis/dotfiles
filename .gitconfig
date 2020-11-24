@@ -1,6 +1,6 @@
 [user]
    name = Gino Gravanis
-   email = gino.gravanis@gmail.com
+   email = gino.gravanis@godmode.sh
 [merge]
    conflictstyle = diff3
 [alias]
