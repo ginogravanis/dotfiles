@@ -1,3 +1,5 @@
+[core]
+   pager=less -x3
 [user]
    name = Gino Gravanis
    email = gino.gravanis@godmode.sh
