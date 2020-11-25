@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+for interface in $(ls /sys/class/net/ | grep -v lo)
+do
+    if [[ $(cat /sys/class/net/$interface/carrier 2> /dev/null) = 1 ]]
+    then
+        exit 0
+    fi
+done
+exit 1

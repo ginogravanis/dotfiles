@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+get_default_sink_name() {
+    pacmd stat | awk -F": " '/^Default sink name: /{print $2}'
+}
+
+get_default_sink_vol() {
+    pacmd list-sinks |
+    awk '/^\s+name: /{indefault = $2 == "<'$(get_default_sink_name)'>"}
+    /^\s+volume: / && indefault {print $5; exit}' | awk -F"%" '{print $1}'
+}
+
+update_root_window_name() {
+    vol="V $(get_default_sink_vol)%"
+    battery="B $(battery)"
+    date=$(date +'%a %F %R')
+    is_online=$(online && echo "I" || echo "_")
+    xsetroot -name "$vol | $battery | $is_online | $date"
+}
+
+getopts "ht:" opt
+case $opt in
+    h) echo "Usage: bar [-h] [-t SEC]"
+       echo "Updates the X11 root window name"
+       echo "   -h   Print this help"
+       echo "   -t   Run bar every SEC seconds";;
+    t) while true; do update_root_window_name; sleep $OPTARG; done;;
+    *) update_root_window_name;;
+esac

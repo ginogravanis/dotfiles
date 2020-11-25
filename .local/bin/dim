@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+timeout=10
+pid=$(pgrep redshift)
+
+killredshift() {
+    if [ -n "$pid" ]
+    then
+        kill -s 9 "$pid"
+        timeout ${timeout} tail -f --pid=$pid /dev/null
+    fi
+}
+
+case $1 in
+    set)
+        killredshift
+        redshift -PO "$2"
+        ;;
+
+    reset)
+        killredshift
+        redshift -x
+        ;;
+
+    *)
+        killredshift && redshift -PO 2700
+        ;;
+esac
