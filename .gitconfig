@@ -1,3 +1,5 @@
+[core]
+   pager=less -x3
 [user]
    name = Gino Gravanis
    email = ginogravanis@users.noreply.github.com
