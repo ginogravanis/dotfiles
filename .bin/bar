@@ -14,7 +14,7 @@ update_root_window_name() {
     vol="V $(get_default_sink_vol)%"
     battery="B $(battery)"
     date=$(date +'%a %F %R')
-    is_online=$(online && echo "I" || echo "_")
+    is_online=$(online && echo $(iw dev wlp3s0 link | grep SSID | cut -d' ' -f2) || echo "_")
     xsetroot -name "$vol | $battery | $is_online | $date"
 }
 
