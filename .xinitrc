@@ -6,5 +6,6 @@ picom -b --backend glx --vsync &
 volume set 30%
 bar -t 5 &
 redshift &
+dropbox &
 eval $(ssh-agent)
 exec dwm
