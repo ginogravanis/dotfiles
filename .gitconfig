@@ -7,21 +7,22 @@
    conflictstyle = diff3
 [alias]
    jump = reset --hard
-   clean = reset --hard HEAD
-   vanish = reset --hard HEAD^
    melt = reset --soft HEAD^
    shove = push --force-with-lease
 
    a = add
    aa = add .
    ap = add -p
+   b = checkout -b
    c = commit
    ca = commit --amend
    can = commit --amend --no-edit
    ch = checkout
    cl = clone
+   d = branch -D
    f = fetch --all -Pp
    j = jump
+   m = branch -m
    r = rebase
    ri = rebase -i
    s = status -sb
