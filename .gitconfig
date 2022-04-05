@@ -29,3 +29,5 @@
    st = stash
    sd = stash drop
    sp = stash pop
+[init]
+   defaultBranch = main
