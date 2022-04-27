@@ -7,7 +7,7 @@ filetype off
 set runtimepath+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'altercation/vim-colors-solarized'
+Plugin 'sainnhe/gruvbox-material'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree.git'
 Plugin 'andys8/vim-elm-syntax'
@@ -127,12 +127,11 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 
 " Set colors
-colorscheme solarized
 let &background="dark"
+colorscheme gruvbox-material
 let &colorcolumn="80,".join(range(120,999), ",")
-hi ColorColumn ctermbg=0 guibg=Black
 
-" Swap between light and dark mode with <F5>
+" <F5> to toggle between light and dark mode
 nnoremap <F5> :let &background = ( &background == "dark" ? "light" : "dark")<CR>
 
 " Toggle nerdtree with <TAB>
