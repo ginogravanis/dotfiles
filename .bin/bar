@@ -1,17 +1,15 @@
 #!/usr/bin/env bash
+# depends:
+#  alsa-utils (amixer)
+#  iw (iw)
 
-get_default_sink_name() {
-    pacmd stat | awk -F": " '/^Default sink name: /{print $2}'
-}
 
-get_default_sink_vol() {
-    pacmd list-sinks |
-    awk '/^\s+name: /{indefault = $2 == "<'$(get_default_sink_name)'>"}
-    /^\s+volume: / && indefault {print $5; exit}' | awk -F"%" '{print $1}'
+get_vol() {
+    amixer sget Master | grep -i "front left:" | cut -d" " -f7 | tr -d '[]'
 }
 
 update_root_window_name() {
-    vol="V $(get_default_sink_vol)%"
+    vol="V $(get_vol)"
     battery="B $(battery)"
     date=$(date +'%a %F %R')
     is_online=$(online && echo $(iw dev wlp3s0 link | grep SSID | cut -d' ' -f2) || echo "_")
