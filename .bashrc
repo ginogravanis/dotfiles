@@ -9,7 +9,5 @@ alias gk="gitk --all &"
 __git_complete g __git_main
 __git_complete dot __git_main
 
+CLICOLOR=1
 PS1='[\u@\h \W]\$ '
-
-export CLICOLOR=1
-export EDITOR=vim
