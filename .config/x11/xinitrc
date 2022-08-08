@@ -1,6 +1,6 @@
 #!/bin/sh
 
 tvoff
-~/.fehbg &
+${XDG_CONFIG_HOME:-$HOME/.config}/feh/bg &
 bar -t 5 &
 ssh-agent dwm
