@@ -135,4 +135,7 @@ let &colorcolumn="80,".join(range(120,999), ",")
 nnoremap <F5> :let &background = ( &background == "dark" ? "light" : "dark")<CR>
 
 " Toggle nerdtree with <TAB>
-map <TAB> :NERDTreeToggle<CR>
+nnoremap <TAB> :NERDTreeToggle<CR>
+
+" Close tab if nerdtree is the only remaining buffer
+autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
