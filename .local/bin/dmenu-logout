@@ -3,8 +3,16 @@
 
 choice=$(echo -e "shutdown\nreboot" | dmenu)
 
+confirm() {
+   answer=$(echo -e "Yes\nNo" | dmenu -p "$1")
+   case $answer in
+      "Yes") return 0 ;;
+      *) return 1 ;;
+   esac
+}
+
 case $choice in
-   "shutdown") shutdown now ;;
-   "reboot") reboot ;;
+   "shutdown") confirm "Shutdown?" && shutdown now ;;
+   "reboot") confirm "Reboot?" && reboot ;;
    *) ;;
 esac
