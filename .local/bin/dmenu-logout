@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# depends: dmenu, systemd-sysvcompat, slock
+
+choice=$(echo -e "shutdown\nreboot" | dmenu)
+
+case $choice in
+   "shutdown") shutdown now ;;
+   "reboot") reboot ;;
+   *) ;;
+esac
