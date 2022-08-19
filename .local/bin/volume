@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
 case $1 in
-    get) amixer get Master;;
-    set) amixer sset Master $2;;
-    inc) amixer sset Master 1%+;;
-    dec) amixer sset Master 1%-;;
-    up) amixer sset Master 5%+;;
-    down) amixer sset Master 5%-;;
-    mute) amixer sset Master toggle;;
-    *) echo "Usage: volume.sh up|down|mute"
+   get) amixer get Master;;
+   set) amixer sset Master $2;;
+   inc) amixer sset Master 1%+;;
+   dec) amixer sset Master 1%-;;
+   up) amixer sset Master 5%+;;
+   down) amixer sset Master 5%-;;
+   mute) amixer sset Master toggle;;
+   *) echo "Usage: volume.sh up|down|mute"
 esac
 bar
