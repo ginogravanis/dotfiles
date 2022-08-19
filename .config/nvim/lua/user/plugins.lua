@@ -28,6 +28,16 @@ use {
    end,
 }
 
+use {
+  'kyazdani42/nvim-tree.lua',
+  requires = {
+    'kyazdani42/nvim-web-devicons',
+  },
+  config = function()
+     require('user.plugins.nvim-tree')
+  end,
+}
+
 -- Automatically install plugins on first run
 if is_bootstrap then
    require('packer').sync()
