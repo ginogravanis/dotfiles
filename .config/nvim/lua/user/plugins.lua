@@ -23,6 +23,7 @@ use('wbthomason/packer.nvim')
 use('gpanders/editorconfig.nvim')
 use('tpope/vim-eunuch')
 use('tpope/vim-sleuth')
+use('nelstrom/vim-visual-star-search')
 
 use {
    'ellisonleao/gruvbox.nvim',
