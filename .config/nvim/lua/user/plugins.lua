@@ -42,6 +42,13 @@ use {
   end,
 }
 
+use {
+  'airblade/vim-rooter',
+  setup = function()
+    vim.g.rooter_patterns = { '.git', '.config' }
+  end,
+}
+
 -- Automatically install plugins on first run
 if is_bootstrap then
    require('packer').sync()
