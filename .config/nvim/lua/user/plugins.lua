@@ -21,6 +21,8 @@ local use = require('packer').use
 
 use('wbthomason/packer.nvim')
 use('gpanders/editorconfig.nvim')
+use('tpope/vim-eunuch')
+use('tpope/vim-sleuth')
 
 use {
    'ellisonleao/gruvbox.nvim',
