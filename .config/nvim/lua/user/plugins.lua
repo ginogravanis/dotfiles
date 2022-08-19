@@ -20,6 +20,7 @@ require('packer').init({
 local use = require('packer').use
 
 use('wbthomason/packer.nvim')
+use('gpanders/editorconfig.nvim')
 
 use {
    'ellisonleao/gruvbox.nvim',
