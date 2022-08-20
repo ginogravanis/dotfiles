@@ -8,10 +8,10 @@ keymap('v', '>', '>gv')
 
 keymap('v', 'p', '"_dP')
 
-keymap('n', '<Esc><Esc>', ':w<CR>')
-keymap('n', '<leader>q', ':qa<CR>')
+keymap('n', '<esc><esc>', ':w<cr>')
+keymap('n', '<leader>q', ':qa<cr>')
 
-keymap('n', '<C-H>', '<C-W>h')
-keymap('n', '<C-J>', '<C-W>j')
-keymap('n', '<C-K>', '<C-W>k')
-keymap('n', '<C-L>', '<C-W>l')
+keymap('n', '<c-h>', '<c-w>h')
+keymap('n', '<c-j>', '<c-w>j')
+keymap('n', '<c-k>', '<c-w>k')
+keymap('n', '<c-l>', '<c-w>l')
