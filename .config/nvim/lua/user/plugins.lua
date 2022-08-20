@@ -56,6 +56,13 @@ use {
    end,
 }
 
+use {
+   'karb94/neoscroll.nvim',
+   config = function()
+      require('user.plugins.neoscroll')
+   end,
+}
+
 -- Automatically install plugins on first run
 if is_bootstrap then
    require('packer').sync()
