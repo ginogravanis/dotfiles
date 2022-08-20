@@ -3,8 +3,8 @@
 
 source "${XDG_CONFIG_HOME:-$HOME/.config}/bash/git-completion.bash"
 
-alias vim="nvim"
-alias v="vim"
+alias vim="$EDITOR"
+alias v="$EDITOR"
 alias g="git"
 alias dot="git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME"
 alias gk="gitk --all &"
