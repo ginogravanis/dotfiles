@@ -49,6 +49,13 @@ use {
   end,
 }
 
+use {
+   'phaazon/hop.nvim',
+   config = function()
+      require('user.plugins.hop')
+   end,
+}
+
 -- Automatically install plugins on first run
 if is_bootstrap then
    require('packer').sync()
