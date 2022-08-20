@@ -2,4 +2,4 @@
 
 xrandr --output eDP1 --mode 1920x1080 --rate 60 --output HDMI2 --mode 1920x1080 --rate 60 --left-of eDP1
 ~/.fehbg
-reset_cursor
+reset-cursor
