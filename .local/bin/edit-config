@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+# depends: dmenu, st
+
+configs=".local/bin
+neovim
+shell
+bash
+git
+feh
+X11
+dwm
+st
+dmenu"
+
+choice=$(echo -e "$configs" | dmenu -i -p "Jump to config:")
+
+case $choice in
+   ".local/bin") st -e "$EDITOR" ~/.local/bin ;;
+   "neovim") st -e "$EDITOR" "$XDG_CONFIG_HOME/nvim/" ;;
+   "shell") st -e "$EDITOR" "$XDG_CONFIG_HOME/shell/profile" ;;
+   "bash") st -e "$EDITOR" "$XDG_CONFIG_HOME/bash/bashrc" ;;
+   "git") st -e "$EDITOR" "$XDG_CONFIG_HOME/git/config" ;;
+   "feh") st -e "$EDITOR" "$XDG_CONFIG_HOME/feh/bg" ;;
+   "X11") st -e "$EDITOR" "$XDG_CONFIG_HOME/x11/xinitrc" ;;
+   "dwm") st -e "$EDITOR" ~/dev/dwm/PKGBUILD ;;
+   "st") st -e "$EDITOR" ~/dev/st/PKGBUILD ;;
+   "dmenu") st -e "$EDITOR" ~/dev/dmenu/PKGBUILD ;;
+   *) ;;
+esac
