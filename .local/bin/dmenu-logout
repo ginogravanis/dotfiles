@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # depends: dmenu, systemd-sysvcompat, slock
 
-choice=$(echo -e "lock screen\nreboot\nshutdown" | dmenu)
+choice=$(echo -e "Lock screen\nReboot\nShutdown" | dmenu)
 
 confirm() {
    answer=$(echo -e "Yes\nNo" | dmenu -p "$1")
@@ -12,8 +12,8 @@ confirm() {
 }
 
 case $choice in
-   "shutdown") confirm "Shutdown?" && shutdown now ;;
-   "reboot") confirm "Reboot?" && reboot ;;
-   "lock screen") slock ;;
+   "Shutdown") confirm "Shutdown?" && shutdown now ;;
+   "Reboot") confirm "Reboot?" && reboot ;;
+   "Lock screen") slock ;;
    *) ;;
 esac
