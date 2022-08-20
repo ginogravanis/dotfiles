@@ -45,7 +45,7 @@ use {
 use {
   'airblade/vim-rooter',
   setup = function()
-    vim.g.rooter_patterns = { '.git', '>dev', '>.config', '.config'  }
+    vim.g.rooter_patterns = { '.git', '.editorconfig', '>dev', '>.config', '.config'  }
   end,
 }
 
