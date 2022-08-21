@@ -17,6 +17,8 @@ export LESSHISTFILE="-"
 export TERMINFO="${XDG_CONFIG_HOME:-$HOME/.config}/st/terminfo"
 export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority"
 
+export SUDO_ASKPASS="$HOME/.local/bin/askpass"
+
 if [[ -z "${DISPLAY}" && "${XDG_VTNR}" -eq 1 ]]; then
    exec startx ${XINITRC}
 fi

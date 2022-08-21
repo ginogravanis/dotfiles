@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# depends: dmenu
+
+dmenu -fn Monospace-18 -P -p "$1" <&- && true
