@@ -12,18 +12,20 @@ dwm
 st
 dmenu"
 
+tty -s || terminal="st -e"
+
 choice=$(echo -e "$configs" | dmenu -i -p "Jump to config:")
 
 case $choice in
-   ".local/bin") st -e "$EDITOR" ~/.local/bin ;;
-   "neovim") st -e "$EDITOR" "$XDG_CONFIG_HOME/nvim/" ;;
-   "shell") st -e "$EDITOR" "$XDG_CONFIG_HOME/shell/profile" ;;
-   "bash") st -e "$EDITOR" "$XDG_CONFIG_HOME/bash/bashrc" ;;
-   "git") st -e "$EDITOR" "$XDG_CONFIG_HOME/git/config" ;;
-   "feh") st -e "$EDITOR" "$XDG_CONFIG_HOME/feh/bg" ;;
-   "X11") st -e "$EDITOR" "$XDG_CONFIG_HOME/x11/xinitrc" ;;
-   "dwm") st -e "$EDITOR" ~/dev/dwm/PKGBUILD ;;
-   "st") st -e "$EDITOR" ~/dev/st/PKGBUILD ;;
-   "dmenu") st -e "$EDITOR" ~/dev/dmenu/PKGBUILD ;;
+   ".local/bin") $terminal "$EDITOR" ~/.local/bin ;;
+   "neovim") $terminal "$EDITOR" "$XDG_CONFIG_HOME/nvim/" ;;
+   "shell") $terminal "$EDITOR" "$XDG_CONFIG_HOME/shell/profile" ;;
+   "bash") $terminal "$EDITOR" "$XDG_CONFIG_HOME/bash/bashrc" ;;
+   "git") $terminal "$EDITOR" "$XDG_CONFIG_HOME/git/config" ;;
+   "feh") $terminal "$EDITOR" "$XDG_CONFIG_HOME/feh/bg" ;;
+   "X11") $terminal "$EDITOR" "$XDG_CONFIG_HOME/x11/xinitrc" ;;
+   "dwm") $terminal "$EDITOR" ~/dev/dwm/PKGBUILD ;;
+   "st") $terminal "$EDITOR" ~/dev/st/PKGBUILD ;;
+   "dmenu") $terminal "$EDITOR" ~/dev/dmenu/PKGBUILD ;;
    *) ;;
 esac
