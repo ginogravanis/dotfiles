@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# depends: dmenu, st
+# depends: dmenu
 
 configs=".local/bin
 neovim
@@ -12,7 +12,7 @@ dwm
 st
 dmenu"
 
-tty -s || terminal="st -e"
+tty -s || terminal="$TERMINAL -e"
 
 choice=$(echo -e "$configs" | dmenu -i -p "Jump to config:")
 
