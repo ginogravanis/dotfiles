@@ -12,6 +12,7 @@
 
    a = add
    aa = add .
+   ai = add -i
    ap = add -p
    bc = checkout -b
    bm = branch -m
@@ -27,6 +28,7 @@
    j = jump
    r = rebase
    ri = rebase -i
+   rr = reset
    s = status -sb
    st = stash
    sd = stash drop
