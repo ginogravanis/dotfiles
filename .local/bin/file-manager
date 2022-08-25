@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+tty -s || terminal="$TERMINAL -e"
+
+$terminal "$FILE_MANAGER"
