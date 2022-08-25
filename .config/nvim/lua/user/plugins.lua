@@ -26,6 +26,13 @@ use('tpope/vim-sleuth')
 use('nelstrom/vim-visual-star-search')
 
 use {
+   'neovim/nvim-lspconfig',
+   config = function()
+      require('user.plugins.lspconfig')
+   end,
+}
+
+use {
    'ellisonleao/gruvbox.nvim',
    config = function()
       vim.cmd('colorscheme gruvbox')
