@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 img="$HOME/.local/share/wallpaper"
-[[ -f "$img" ]] && which feh && feh --no-fehbg --bg-scale "$img"
+[[ -f "$img" ]] && feh --no-fehbg --bg-scale "$img"
