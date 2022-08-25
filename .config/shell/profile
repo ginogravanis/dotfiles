@@ -4,6 +4,7 @@ export PATH="$PATH:$HOME/.local/bin"
 
 export EDITOR="nvim"
 export TERMINAL="st"
+export FILE_MANAGER="nnn"
 export BROWSER="browser"
 export WALLPAPER="$HOME/.local/share/wallpaper"
 
