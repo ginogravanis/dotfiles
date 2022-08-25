@@ -7,7 +7,7 @@ killredshift() {
    if [ -n "$pid" ]
    then
       kill -s 9 "$pid"
-      timeout ${timeout} tail -f --pid=$pid /dev/null
+      timeout ${timeout} tail -f --pid="$pid" /dev/null
    fi
 }
 

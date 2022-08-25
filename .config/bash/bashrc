@@ -1,18 +1,19 @@
+#!/usr/bin/env bash
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
 source "${XDG_CONFIG_HOME:-$HOME/.config}/bash/git-completion.bash"
 
-alias vim="$EDITOR"
-alias v="$EDITOR"
+alias v="\$EDITOR"
 alias g="git"
-alias dot="git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME"
+alias dot="git --git-dir=\$HOME/.dotfiles.git/ --work-tree=\$HOME"
 alias gk="gitk --all &"
-alias dk="(cd $HOME/.dotfiles.git && gk)"
+alias dk="(cd \$HOME/.dotfiles.git/ && gk)"
 __git_complete g __git_main
 __git_complete dot __git_main
 alias ll="ls -l"
 alias la="ls -la"
 
-CLICOLOR=1
-PS1='[\u@\h \W]\$ '
+export CLICOLOR=1
+export PS1='[\u@\h \W]\$ '

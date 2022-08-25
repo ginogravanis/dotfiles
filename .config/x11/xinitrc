@@ -2,7 +2,7 @@
 
 xset r rate 200 50
 tvoff
-${XDG_CONFIG_HOME:-$HOME/.config}/feh/bg &
+"${XDG_CONFIG_HOME:-$HOME/.config}/feh/bg" &
 unclutter --exclude-root &
 bar -t 5 &
 ssh-agent dwm

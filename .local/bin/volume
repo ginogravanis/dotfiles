@@ -2,7 +2,7 @@
 
 case $1 in
    get) amixer get Master;;
-   set) amixer sset Master $2;;
+   set) amixer sset Master "$2";;
    inc) amixer sset Master 1%+;;
    dec) amixer sset Master 1%-;;
    up) amixer sset Master 5%+;;

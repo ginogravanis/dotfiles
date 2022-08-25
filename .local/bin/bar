@@ -12,8 +12,13 @@ update_root_window_name() {
    vol="V $(get_vol)"
    battery="B $(battery)"
    date=$(date +'%a %F %R')
-   is_online=$(online && echo $(iw dev wlp3s0 link | grep SSID | cut -d' ' -f2) || echo "_")
-   xsetroot -name "$vol | $battery | $is_online | $date"
+   if online
+   then
+      network=$(iw dev wlp3s0 link | grep SSID | cut -d' ' -f2)
+   else
+      network="_"
+   fi
+   xsetroot -name "$vol | $battery | $network | $date"
 }
 
 getopts "ht:" opt
@@ -22,6 +27,6 @@ case $opt in
       echo "Updates the X11 root window name"
       echo "   -h   Print this help"
       echo "   -t   Run bar every SEC seconds";;
-   t) while true; do update_root_window_name; sleep $OPTARG; done;;
+   t) while true; do update_root_window_name; sleep "$OPTARG"; done;;
    *) update_root_window_name;;
 esac
