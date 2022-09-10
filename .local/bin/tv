@@ -1,5 +1,28 @@
 #!/usr/bin/env bash
 
-xrandr --output eDP1 --mode 1920x1080 --rate 60 --output HDMI2 --mode 1920x1080 --rate 60 --left-of eDP1
-~/.fehbg
-reset-cursor
+if [ -z "$1" ]; then
+   arg="on"
+else
+   arg="$1"
+fi
+
+laptop_screen=(--output eDP1 --mode 1920x1080 --rate 60)
+reset_wallpaper="${XDG_CONFIG_HOME:-$HOME/.config}/feh/bg"
+
+case $arg in
+   "on")
+      xrandr "${laptop_screen[@]}" --output HDMI2 --mode 1920x1080 --rate 60 --left-of eDP1
+      "$reset_wallpaper"
+      reset-cursor
+      ;;
+   "off")
+      xrandr "${laptop_screen[@]}" --output HDMI2 --off
+      "$reset_wallpaper"
+      reset-cursor
+      ;;
+   "hd")
+      xrandr "${laptop_screen[@]}" --output HDMI2 --mode 3840x2160 --rate 60 --left-of eDP1
+      "$reset_wallpaper"
+      reset-cursor
+      ;;
+esac
