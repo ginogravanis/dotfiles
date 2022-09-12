@@ -12,17 +12,16 @@ killredshift() {
 }
 
 case $1 in
-   set)
+   "")
       killredshift
-      redshift -PO "$2"
+      redshift -PO 2000
       ;;
-
-   reset)
+   "reset" | "r")
       killredshift
       redshift -x
       ;;
-
    *)
-      killredshift && redshift -PO 2700
+      killredshift
+      redshift -PO "$@"
       ;;
 esac
