@@ -10,6 +10,7 @@ keymap('v', 'p', '"_dP')
 
 keymap('n', '<esc><esc>', ':w<cr>')
 keymap('n', '<leader>q', ':qa<cr>')
+keymap('n', '<leader>Q', ':qa!<cr>')
 
 keymap('n', '<c-h>', '<c-w>h')
 keymap('n', '<c-j>', '<c-w>j')
