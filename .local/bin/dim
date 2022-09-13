@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# depends: coreutils, procps-ng, redshift, util-linux
 
 timeout=10
 pid=$(pgrep redshift)

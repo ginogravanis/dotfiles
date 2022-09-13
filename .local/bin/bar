@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
-# depends:
-#  alsa-utils (amixer)
-#  iw (iw)
+# depends: alsa-utils, coreutils, grep, iw, xorg-xsetroot
+# depends-extra: battery, online
 
 
 get_vol() {

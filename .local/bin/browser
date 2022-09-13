@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
+# depends: firefox
 
 exec firefox --private-window "$@"

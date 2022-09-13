@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+# depends: coreutils, alsa-utils
+# depends-extra: bar
 
 case $1 in
    get) amixer get Master;;

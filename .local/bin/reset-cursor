@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-
-xsetroot -xcf /usr/share/icons/Adwaita/cursors/left_ptr 28

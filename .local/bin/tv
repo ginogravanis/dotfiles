@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# depends: xorg-xrandr, xorg-xsetroot
 
 if [ -z "$1" ]; then
    arg="on"
@@ -9,20 +10,25 @@ fi
 laptop_screen=(--output eDP1 --mode 1920x1080 --rate 60)
 reset_wallpaper="${XDG_CONFIG_HOME:-$HOME/.config}/feh/bg"
 
+reset_cursor()
+{
+   xsetroot -xcf /usr/share/icons/Adwaita/cursors/left_ptr 28
+}
+
 case $arg in
    "on")
       xrandr "${laptop_screen[@]}" --output HDMI2 --mode 1920x1080 --rate 60 --left-of eDP1
       "$reset_wallpaper"
-      reset-cursor
+      reset_cursor
       ;;
    "off")
       xrandr "${laptop_screen[@]}" --output HDMI2 --off
       "$reset_wallpaper"
-      reset-cursor
+      reset_cursor
       ;;
    "hd")
       xrandr "${laptop_screen[@]}" --output HDMI2 --mode 3840x2160 --rate 60 --left-of eDP1
       "$reset_wallpaper"
-      reset-cursor
+      reset_cursor
       ;;
 esac

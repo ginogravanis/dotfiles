@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# depends: dmenu
+# depends: coreutils, dmenu
 
 configs=".local/bin
 neovim
