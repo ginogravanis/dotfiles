@@ -28,6 +28,9 @@
    j = jump
    r = rebase
    ri = rebase -i
+   ra = rebase --abort
+   rc = rebase --continue
+   rq = rebase --quit
    rr = reset
    s = status -sb
    st = stash
