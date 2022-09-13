@@ -19,6 +19,7 @@
    bd = branch -D
    c = commit
    ca = commit --amend
+   caa = commit -a
    can = commit --amend --no-edit
    ch = checkout
    cl = clone
