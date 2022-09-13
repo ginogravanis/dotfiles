@@ -1,6 +1,5 @@
 require('nvim-tree').setup({
    disable_netrw = true,
-   open_on_setup = true,
    hijack_cursor = true,
    prefer_startup_root = true,
    sync_root_with_cwd = true,

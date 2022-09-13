@@ -70,6 +70,19 @@ use {
    end,
 }
 
+use {
+   'nvim-telescope/telescope.nvim',
+   requires = {
+      { 'nvim-lua/plenary.nvim' },
+      { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
+      { 'kyazdani42/nvim-web-devicons' },
+      { 'nvim-telescope/telescope-live-grep-args.nvim' },
+   },
+   config = function()
+      require('user.plugins.telescope')
+   end,
+}
+
 -- Automatically install plugins on first run
 if is_bootstrap then
    require('packer').sync()
