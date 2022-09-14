@@ -17,15 +17,15 @@ tty -s || termcmd="$TERMINAL -e"
 choice=$(echo -e "$configs" | dmenu -i -p "Jump to config:")
 
 case $choice in
-   ".local/bin") $termcmd "$EDITOR" ~/.local/bin ;;
-   "neovim") $termcmd "$EDITOR" "$XDG_CONFIG_HOME/nvim/" ;;
-   "shell") $termcmd "$EDITOR" "$XDG_CONFIG_HOME/shell/profile" ;;
-   "bash") $termcmd "$EDITOR" "$XDG_CONFIG_HOME/bash/bashrc" ;;
-   "git") $termcmd "$EDITOR" "$XDG_CONFIG_HOME/git/config" ;;
-   "feh") $termcmd "$EDITOR" "$XDG_CONFIG_HOME/feh/bg" ;;
-   "X11") $termcmd "$EDITOR" "$XDG_CONFIG_HOME/x11/xinitrc" ;;
-   "dwm") $termcmd "$EDITOR" ~/dev/dwm/PKGBUILD ;;
-   "st") $termcmd "$EDITOR" ~/dev/st/PKGBUILD ;;
-   "dmenu") $termcmd "$EDITOR" ~/dev/dmenu/PKGBUILD ;;
+   ".local/bin") cd ~/.local/bin && $termcmd "$EDITOR" . ;;
+   "neovim") cd "$XDG_CONFIG_HOME/nvim/" && $termcmd "$EDITOR" . ;;
+   "shell") cd "$XDG_CONFIG_HOME/shell/" && $termcmd "$EDITOR" profile ;;
+   "bash") cd "$XDG_CONFIG_HOME/bash/" && $termcmd "$EDITOR" bashrc ;;
+   "git") cd "$XDG_CONFIG_HOME/git/" && $termcmd "$EDITOR" config ;;
+   "feh") cd "$XDG_CONFIG_HOME/feh/" && $termcmd "$EDITOR" bg ;;
+   "X11") cd "$XDG_CONFIG_HOME/x11/" && $termcmd "$EDITOR" xinitrc ;;
+   "dwm") cd ~/dev/dwm/ && $termcmd "$EDITOR" PKGBUILD ;;
+   "st") cd ~/dev/st/ && $termcmd "$EDITOR" PKGBUILD ;;
+   "dmenu") cd ~/dev/dmenu/ && $termcmd "$EDITOR" PKGBUILD ;;
    *) ;;
 esac
