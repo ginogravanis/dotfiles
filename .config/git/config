@@ -27,6 +27,8 @@
    dc = diff --cached
    f = fetch --all -Pp
    j = jump
+   p = push
+   pf = push -f
    r = rebase
    ri = rebase -i
    ra = rebase --abort
