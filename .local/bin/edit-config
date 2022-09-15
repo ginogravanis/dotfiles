@@ -1,20 +1,22 @@
 #!/usr/bin/env bash
-# depends: coreutils, dmenu
+# depends: dmenu
 
-configs=".local/bin
-neovim
-shell
-bash
-git
-feh
-X11
-dwm
-st
-dmenu"
+configs=(
+   .local/bin
+   neovim
+   shell
+   bash
+   git
+   feh
+   X11
+   dwm
+   st
+   dmenu
+)
 
 tty -s || termcmd="$TERMINAL -e"
 
-choice=$(echo -e "$configs" | dmenu -i -p "Jump to config:")
+choice=$(printf '%s\n' "${configs[@]}" | dmenu -i -p "Jump to config:")
 
 case $choice in
    ".local/bin") cd ~/.local/bin && $termcmd "$EDITOR" . ;;
