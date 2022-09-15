@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# depends: alsa-utils, coreutils, grep, iw, xorg-xsetroot
+# depends: alsa-utils, iw, xorg-xsetroot
 # depends-extra: battery, online
 
 

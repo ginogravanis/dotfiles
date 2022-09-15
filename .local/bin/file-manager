@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# depends: coreutils
+# depends: 
 
 tty -s || terminal="$TERMINAL -e"
 

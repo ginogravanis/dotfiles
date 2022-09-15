@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-# depends: acpi, coreutils, gawk
+# depends: acpi
 
 acpi | head -n1 |  awk -F', ' '{print $2}'
