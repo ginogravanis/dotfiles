@@ -1,10 +1,17 @@
-#!/bin/sh
+#!/usr/bin/env bash
+
+autostart=(
+   pipewire
+   "unclutter --exclude-root"
+   "bar -t 5"
+   dunst
+)
+
+for cmd in "${autostart[@]}"; do
+   pidof -s "$(echo "$cmd" | cut -d" " -f1)" || $cmd &
+done
 
 xset r rate 200 50
 tv off
-pidof -s pipewire || pipewire &
-"${XDG_CONFIG_HOME:-$HOME/.config}/feh/bg" &
-pidof -s unclutter || unclutter --exclude-root &
-pidof -s bar || bar -t 5 &
-pidof -s dunst || dunst &
+"${XDG_CONFIG_HOME:-$HOME/.config}/feh/bg"
 ssh-agent dwm
