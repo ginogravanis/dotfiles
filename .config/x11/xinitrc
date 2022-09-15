@@ -2,7 +2,8 @@
 
 xset r rate 200 50
 tv off
+pidof -s pipewire || pipewire &
 "${XDG_CONFIG_HOME:-$HOME/.config}/feh/bg" &
-unclutter --exclude-root &
-bar -t 5 &
+pidof -s unclutter || unclutter --exclude-root &
+pidof -s bar || bar -t 5 &
 ssh-agent dwm
