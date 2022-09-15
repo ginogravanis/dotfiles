@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+if ! rclone check ~/dropbox dropbox:; then
+   rclone sync -P ~/dropbox/ dropbox: && notify-send -u low "Dropbox up to date"
+fi
