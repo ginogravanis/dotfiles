@@ -1,7 +1,12 @@
 #!/usr/bin/env bash
-# depends: coreutils, dmenu, systemd-sysvcompat, slock
+# depends: dmenu, slock
 
-choice=$(echo -e "Lock screen\nReboot\nShutdown" | dmenu)
+options=(
+   "Lock screen"
+   "Reboot"
+   "Shutdown"
+)
+choice=$(printf '%s\n' "${options[@]}" | dmenu)
 
 confirm() {
    answer=$(echo -e "Yes\nNo" | dmenu -p "$1")
