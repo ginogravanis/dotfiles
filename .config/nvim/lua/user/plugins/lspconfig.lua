@@ -35,3 +35,4 @@ require('lspconfig').sumneko_lua.setup{
 require('lspconfig').pylsp.setup{
    on_attach = on_attach,
 }
+require('lspconfig').clangd.setup{}
