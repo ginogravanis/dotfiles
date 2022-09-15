@@ -6,4 +6,5 @@ pidof -s pipewire || pipewire &
 "${XDG_CONFIG_HOME:-$HOME/.config}/feh/bg" &
 pidof -s unclutter || unclutter --exclude-root &
 pidof -s bar || bar -t 5 &
+pidof -s dunst || dunst &
 ssh-agent dwm
