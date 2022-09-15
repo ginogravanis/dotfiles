@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+options=(
+   "Web Browser"
+)
+choice=$(printf '%s\n' "${options[@]}" | dmenu -p "Open in:")
+
+case $choice in
+   "Web Browser") $BROWSER "$1" ;;
+   *) ;;
+esac
