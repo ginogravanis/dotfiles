@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# depends: xorg-xbacklight
+
+case $1 in
+   "")
+      xbacklight -get
+      ;;
+   *)
+      xbacklight -set "$@"
+      ;;
+esac
+
