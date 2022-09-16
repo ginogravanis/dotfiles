@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 autostart=(
-   pipewire
    "unclutter --exclude-root"
    "bar -t 5"
    dunst
