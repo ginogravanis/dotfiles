@@ -12,5 +12,5 @@ done
 
 xset r rate 200 50
 tv off
-"${XDG_CONFIG_HOME:-$HOME/.config}/feh/bg"
+setbg
 ssh-agent dwm

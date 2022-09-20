@@ -1,2 +1,0 @@
-#!/usr/bin/env bash
-[[ -f "$WALLPAPER" ]] && feh --no-fehbg --bg-scale "$WALLPAPER"

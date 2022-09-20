@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# depends: xwallpaper
+
+[ -f "$WALLPAPER" ] && xwallpaper --zoom "$WALLPAPER"

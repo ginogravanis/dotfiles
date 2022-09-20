@@ -8,7 +8,6 @@ else
 fi
 
 laptop_screen=(--output eDP1 --mode 1920x1080 --rate 60)
-reset_wallpaper="${XDG_CONFIG_HOME:-$HOME/.config}/feh/bg"
 
 reset_cursor()
 {
@@ -18,17 +17,17 @@ reset_cursor()
 case $arg in
    "on")
       xrandr "${laptop_screen[@]}" --output HDMI2 --mode 1920x1080 --rate 60 --left-of eDP1
-      "$reset_wallpaper"
+      setbg
       reset_cursor
       ;;
    "off")
       xrandr "${laptop_screen[@]}" --output HDMI2 --off
-      "$reset_wallpaper"
+      setbg
       reset_cursor
       ;;
    "hd")
       xrandr "${laptop_screen[@]}" --output HDMI2 --mode 3840x2160 --rate 60 --left-of eDP1
-      "$reset_wallpaper"
+      setbg
       reset_cursor
       ;;
 esac
