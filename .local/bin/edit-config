@@ -9,6 +9,7 @@ configs=(
    git
    feh
    X11
+   tmux
    dwm
    st
    dmenu
@@ -26,6 +27,7 @@ case $choice in
    "git") cd "$XDG_CONFIG_HOME/git/" && $termcmd "$EDITOR" config ;;
    "feh") cd "$XDG_CONFIG_HOME/feh/" && $termcmd "$EDITOR" bg ;;
    "X11") cd "$XDG_CONFIG_HOME/x11/" && $termcmd "$EDITOR" xinitrc ;;
+   "tmux") cd "$XDG_CONFIG_HOME/tmux/" && $termcmd "$EDITOR" tmux.conf ;;
    "dwm") cd ~/dev/dwm/ && $termcmd "$EDITOR" PKGBUILD ;;
    "st") cd ~/dev/st/ && $termcmd "$EDITOR" PKGBUILD ;;
    "dmenu") cd ~/dev/dmenu/ && $termcmd "$EDITOR" PKGBUILD ;;
