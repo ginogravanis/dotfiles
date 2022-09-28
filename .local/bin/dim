@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # depends: redshift
+# depends-extra: light
 
 timeout=10
 pid=$(pgrep redshift)
@@ -12,17 +13,26 @@ killredshift() {
    fi
 }
 
+killredshift
+
 case $1 in
    "")
-      killredshift
+      redshift -PO 3000
+      light 100
+      ;;
+   "1")
+      redshift -PO 3000
+      light 80
+      ;;
+   "2")
       redshift -PO 2000
+      light 50
       ;;
    "reset" | "r")
-      killredshift
       redshift -x
+      light 100
       ;;
    *)
-      killredshift
       redshift -PO "$@"
       ;;
 esac
