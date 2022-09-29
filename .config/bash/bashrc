@@ -7,16 +7,32 @@ source "${XDG_CONFIG_HOME:-$HOME/.config}/bash/git-completion.bash"
 
 export CLICOLOR=1
 PS1="\[$(tput bold)\]\[$(tput setaf 15)\][\[$(tput setaf 3)\]\u\[$(tput setaf 2)\]@\[$(tput setaf 4)\]\h \[$(tput setaf 5)\]\W\[$(tput bold)\]\[$(tput setaf 15)\]]\[$(tput sgr0)\] "
-alias ls="ls --color=auto"
 
-alias v="\$EDITOR"
-alias g="git"
-alias dot="git --git-dir=\$HOME/.dotfiles.git/ --work-tree=\$HOME"
-alias gk="gitk --all &"
-alias dk="(cd \$HOME/.dotfiles.git/ && gk)"
-__git_complete g __git_main
-__git_complete dot __git_main
+alias ls="ls --color=auto"
 alias l="ls"
 alias ll="ls -lh"
 alias la="ls -lha"
-alias ef=". ef"
+
+if [ -x "$(command -v nvim)" ]
+then
+   alias v=nvim
+fi
+
+if [ -x "$(command -v git)" ]
+then
+   __git_complete g __git_main
+   __git_complete dot __git_main
+   alias g="git"
+   alias dot="git --git-dir=\$HOME/.dotfiles.git/ --work-tree=\$HOME"
+
+   if [ -x "$(command -v gitk)" ]
+   then
+      alias gk="gitk --all &"
+      alias dk="(cd \$HOME/.dotfiles.git/ && gk)"
+   fi
+fi
+
+if [ -x "$(command -v ef)" ]
+then
+   alias ef=". ef"
+fi
