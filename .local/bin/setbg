@@ -1,4 +1,11 @@
 #!/usr/bin/env bash
 # depends: xwallpaper
 
-[ -f "$WALLPAPER" ] && xwallpaper --zoom "$WALLPAPER"
+case $1 in
+   "")
+      [ -f "$WALLPAPER" ] && xwallpaper --zoom "$(readlink -f "$WALLPAPER")"
+      ;;
+   *)
+      [ -f "$1" ] && ln -fs "$(realpath "$1")" "$WALLPAPER" && setbg
+      ;;
+esac
