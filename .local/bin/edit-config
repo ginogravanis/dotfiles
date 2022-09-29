@@ -7,7 +7,6 @@ configs=(
    shell
    bash
    git
-   feh
    X11
    fontconfig
    tmux
@@ -26,7 +25,6 @@ case $choice in
    "shell") cd "$XDG_CONFIG_HOME/shell/" && $termcmd "$EDITOR" profile ;;
    "bash") cd "$XDG_CONFIG_HOME/bash/" && $termcmd "$EDITOR" bashrc ;;
    "git") cd "$XDG_CONFIG_HOME/git/" && $termcmd "$EDITOR" config ;;
-   "feh") cd "$XDG_CONFIG_HOME/feh/" && $termcmd "$EDITOR" bg ;;
    "X11") cd "$XDG_CONFIG_HOME/x11/" && $termcmd "$EDITOR" xinitrc ;;
    "fontconfig") cd "$XDG_CONFIG_HOME/fontconfig/" && $termcmd "$EDITOR" fonts.conf ;;
    "tmux") cd "$XDG_CONFIG_HOME/tmux/" && $termcmd "$EDITOR" tmux.conf ;;
