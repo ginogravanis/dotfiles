@@ -3,7 +3,11 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-source "${XDG_CONFIG_HOME:-$HOME/.config}/bash/git-completion.bash"
+bash_completion="${XDG_CONFIG_HOME:-$HOME/.config}/bash/git-completion.bash"
+if [ -f "$bash_completion" ]
+then
+   source "$bash_completion"
+fi
 
 export CLICOLOR=1
 PS1="\[$(tput bold)\]\[$(tput setaf 15)\][\[$(tput setaf 3)\]\u\[$(tput setaf 2)\]@\[$(tput setaf 4)\]\h \[$(tput setaf 5)\]\W\[$(tput bold)\]\[$(tput setaf 15)\]]\[$(tput sgr0)\] "
