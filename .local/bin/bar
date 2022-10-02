@@ -17,7 +17,7 @@ update_root_window_name() {
    else
       network="_"
    fi
-   xsetroot -name "$vol | $battery | $network | $date"
+   xsetroot -name "  $vol | $battery | $network | $date  "
 }
 
 getopts "ht:" opt
