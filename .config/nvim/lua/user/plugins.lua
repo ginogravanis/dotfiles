@@ -77,6 +77,7 @@ use {
       { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
       { 'kyazdani42/nvim-web-devicons' },
       { 'nvim-telescope/telescope-live-grep-args.nvim' },
+      { 'nvim-treesitter/nvim-treesitter' },
    },
    config = function()
       require('user.plugins.telescope')
