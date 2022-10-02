@@ -17,6 +17,11 @@ alias l="ls"
 alias ll="ls -lh"
 alias la="ls -lha"
 
+if [ -x "$(command -v tmux)" ]
+then
+   alias tmux="TERM=tmux-256color tmux"
+fi
+
 if [ -x "$(command -v nvim)" ]
 then
    alias v=nvim
