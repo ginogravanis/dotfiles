@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-. "$HOME/.bashrc"
+[ ! "$XDG_VTNR" -eq 1 ] && source "$HOME/.bashrc"
 
 export PATH="$PATH:$HOME/.local/bin"
 
