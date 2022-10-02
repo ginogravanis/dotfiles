@@ -25,7 +25,7 @@
    cl = clone
    d = diff
    dc = diff --cached
-   f = fetch --all -Pp
+   f = fetch -Pp
    j = jump
    p = push
    pf = push -f
