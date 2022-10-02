@@ -13,4 +13,5 @@ done
 xset r rate 200 50
 tv off
 setbg
+dim r
 ssh-agent dwm
