@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+. "$HOME/.bashrc"
+
 export PATH="$PATH:$HOME/.local/bin"
 
 export EDITOR="nvim"
