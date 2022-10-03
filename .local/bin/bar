@@ -8,16 +8,24 @@ get_vol() {
 }
 
 update_root_window_name() {
-   vol="V $(get_vol)"
-   battery="B $(battery)"
-   date=$(date +'%a %F %R')
+   vol="🔉 $(get_vol)"
+   battery="🔋 $(battery)"
+   date="🗓 $(date +'%a %F %R')"
    if online
    then
-      network=$(iw dev wlp3s0 link | grep SSID | cut -d' ' -f2)
+      network="📶 $(iw dev wlp3s0 link | grep SSID | cut -d' ' -f2)"
    else
-      network="_"
+      network="📶 …"
    fi
-   xsetroot -name "  $vol | $battery | $network | $date  "
+   bar_elements=(
+      "$vol"
+      "$battery"
+      "$network"
+      "$date"
+   )
+   sep='│'
+   bar=$(printf " $sep %s" "${bar_elements[@]}")
+   xsetroot -name " ${bar:3} "
 }
 
 getopts "ht:" opt
