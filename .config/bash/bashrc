@@ -45,3 +45,8 @@ if [ -x "$(command -v ef)" ]
 then
    alias ef=". ef"
 fi
+
+if [ -x "$(command -v curl)" ]
+then
+   alias wttr="curl wttr.in"
+fi
