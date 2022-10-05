@@ -17,14 +17,14 @@ alias l="ls"
 alias ll="ls -lh"
 alias la="ls -lha"
 
-if [ -x "$(command -v tmux)" ]
+if [ -x "$(command -v curl)" ]
 then
-   alias tmux="TERM=tmux-256color tmux"
+   alias wttr="curl wttr.in"
 fi
 
-if [ -x "$(command -v nvim)" ]
+if [ -x "$(command -v ef)" ]
 then
-   alias v=nvim
+   alias ef=". ef"
 fi
 
 if [ -x "$(command -v git)" ]
@@ -41,12 +41,12 @@ then
    fi
 fi
 
-if [ -x "$(command -v ef)" ]
+if [ -x "$(command -v nvim)" ]
 then
-   alias ef=". ef"
+   alias v=nvim
 fi
 
-if [ -x "$(command -v curl)" ]
+if [ -x "$(command -v tmux)" ]
 then
-   alias wttr="curl wttr.in"
+   alias tmux="TERM=tmux-256color tmux"
 fi
