@@ -1,12 +1,6 @@
 #!/usr/bin/env bash
 # depends: xorg-xrandr, xorg-xsetroot
 
-if [ -z "$1" ]; then
-   arg="on"
-else
-   arg="$1"
-fi
-
 laptop_screen=(--output eDP1 --mode 1920x1080 --rate 60)
 
 reset_cursor()
@@ -14,12 +8,7 @@ reset_cursor()
    xsetroot -xcf /usr/share/icons/Adwaita/cursors/left_ptr 28
 }
 
-case $arg in
-   "on")
-      xrandr "${laptop_screen[@]}" --output HDMI2 --mode 1920x1080 --rate 60 --left-of eDP1
-      setbg
-      reset_cursor
-      ;;
+case "$1" in
    "off")
       xrandr "${laptop_screen[@]}" --output HDMI2 --off
       setbg
@@ -27,6 +16,11 @@ case $arg in
       ;;
    "hd")
       xrandr "${laptop_screen[@]}" --output HDMI2 --mode 3840x2160 --rate 60 --left-of eDP1
+      setbg
+      reset_cursor
+      ;;
+   *)
+      xrandr "${laptop_screen[@]}" --output HDMI2 --mode 1920x1080 --rate 60 --left-of eDP1
       setbg
       reset_cursor
       ;;
