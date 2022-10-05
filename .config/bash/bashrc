@@ -46,6 +46,14 @@ then
    alias v=nvim
 fi
 
+if [ -x "$(command -v ssh)" ]
+then
+   tth() {
+      local host="$1"
+      ssh -o RequestTTY=yes "$host" tmux new-session -A -s gino
+   }
+fi
+
 if [ -x "$(command -v tmux)" ]
 then
    alias tmux="TERM=tmux-256color tmux"
