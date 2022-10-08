@@ -52,6 +52,11 @@ then
       local host="$1"
       ssh -o RequestTTY=yes "$host" tmux new-session -A -s gino
    }
+   if ! command -v _ssh
+   then
+      source /usr/share/bash-completion/completions/ssh
+   fi
+   complete -F _ssh tth
 fi
 
 if [ -x "$(command -v tmux)" ]
