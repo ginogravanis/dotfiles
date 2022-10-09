@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# depends: virt-manager
+
+exec virt-manager "$@"
