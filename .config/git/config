@@ -21,6 +21,7 @@
    ca = commit --amend
    caa = commit -a
    can = commit --amend --no-edit
+   cm = commit -m
    ch = checkout
    cl = clone
    d = diff
