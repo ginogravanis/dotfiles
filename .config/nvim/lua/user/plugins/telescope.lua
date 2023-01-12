@@ -1,8 +1,12 @@
 local telescope = require('telescope')
+local builtin = require('telescope.builtin')
 
 telescope.setup()
 
-require('telescope').load_extension('fzf')
-require('telescope').load_extension('live_grep_args')
+telescope.load_extension('fzf')
+telescope.load_extension('live_grep_args')
 
-vim.keymap.set('n', '<leader>f', [[<cmd>lua require('telescope.builtin').find_files()<cr>]])
+vim.keymap.set('n', '<leader>s', builtin.live_grep, {})
+vim.keymap.set('n', '<leader>.s', builtin.grep_string, {})
+vim.keymap.set('n', '<leader>f', builtin.find_files, {})
+vim.keymap.set('n', '<c-p>', builtin.git_files, {})
