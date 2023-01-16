@@ -10,7 +10,7 @@ for cmd in "${autostart[@]}"; do
    pidof -s "$(echo "$cmd" | cut -d" " -f1)" || $cmd &
 done
 
-xset r rate 200 50
+key-speed
 tv off
 setbg
 dim r
