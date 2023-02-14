@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+for ((i = 0 ; i < $1 ; i++)); do
+   xdotool click 1
+done
