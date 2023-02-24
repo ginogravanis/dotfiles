@@ -1,7 +1,13 @@
 #!/usr/bin/env bash
 # depends: xorg-xrandr, xorg-xsetroot
 
-laptop_screen=(--output eDP1 --mode 1920x1080 --rate 60)
+shopt -s nocasematch
+
+internal_display=(--output eDP1)
+external_display=(--output HDMI2)
+left_of_internal=(--left-of eDP1)
+_1080p=(--mode 1920x1080 --rate 60)
+_4k=(--mode 3840x2160 --rate 60 )
 
 reset_cursor()
 {
@@ -9,19 +15,19 @@ reset_cursor()
 }
 
 case "$1" in
-   "off")
-      xrandr "${laptop_screen[@]}" --output HDMI2 --off
-      setbg
-      reset_cursor
+   "on" | "sd")
+      xrandr "${internal_display[@]}" "${_1080p[@]}" "${external_display[@]}" "${_1080p[@]}" "${left_of_internal[@]}"
       ;;
    "hd")
-      xrandr "${laptop_screen[@]}" --output HDMI2 --mode 3840x2160 --rate 60 --left-of eDP1
-      setbg
-      reset_cursor
+      xrandr "${internal_display[@]}" "${_1080p[@]}" "${external_display[@]}" "${_4k[@]}" "${left_of_internal[@]}"
+      ;;
+   "only")
+      xrandr "${internal_display[@]}" --off "${external_display[@]}" "${_1080p[@]}"
       ;;
    *)
-      xrandr "${laptop_screen[@]}" --output HDMI2 --mode 1920x1080 --rate 60 --left-of eDP1
-      setbg
-      reset_cursor
+      xrandr "${internal_display[@]}" "${_1080p[@]}" "${external_display[@]}" --off
       ;;
 esac
+
+setbg
+reset_cursor
