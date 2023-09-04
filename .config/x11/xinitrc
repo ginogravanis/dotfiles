@@ -10,8 +10,8 @@ for cmd in "${autostart[@]}"; do
    pidof -s "$(echo "$cmd" | cut -d" " -f1)" || $cmd &
 done
 
-key-speed
 tv off
 setbg
 dim r
+key-speed
 ssh-agent dwm
